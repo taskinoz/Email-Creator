@@ -1,20 +1,13 @@
 import { statusOptions } from "./Status";
 
-const Ticket = ({ ticket }) => {
+const Ticket = ({
+    ticket,
+    mustHave,
+}) => {
+    let status = statusOptions.find((option) => option.value === ticket.status)
     return (
-        <li>
-            <span>{ticket?.description}</span>
-            <select
-                value={ticket?.status}
-                onChange={(e) => updateTicket(ticket?.id, 'status', e.target.value)}
-            >
-                <option value="">Select Status</option>
-                {statusOptions.map((option) => (
-                    <option key={option.value} value={option.value}>
-                        {option.name}
-                    </option>
-                ))}
-            </select>
+        <li key={ticket.id}>
+            <span style={{background:mustHave?"green":"blue"}}>{mustHave?"[Must Have]":"[Nice to Have]"}</span> <span style={{textDecoration:status.value==="success"?"line-through":"none"}}>{ticket.description}</span> {status.emojii} <span style={{background:status.color}}>{status.name.toUpperCase()}</span>
         </li>
     );
 }

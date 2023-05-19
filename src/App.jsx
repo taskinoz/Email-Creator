@@ -6,6 +6,7 @@ import TicketInput from './components/TicketInput'
 function App() {
 
   const [goals, setGoals] = useState([])
+  const [newGoal, setNewGoal] = useState('')
 
   const [tickets, setTickets] = useState([]);
   const [newTicket, setNewTicket] = useState('');
@@ -13,20 +14,12 @@ function App() {
   const [bauTickets, setBauTickets] = useState([]);
   const [newBauTicket, setNewBauTicket] = useState('');
 
-  const addTicket = () => {
-    const ticket = {
-      description: newTicket,
-      status: '',
-    };
+  const addTicket = (ticket) => {
     setTickets([...tickets, ticket]);
     setNewTicket('');
   };
 
-  const addBauTicket = () => {
-    const bauTicket = {
-      description: newBauTicket,
-      status: '',
-    };
+  const addBauTicket = (bauTicket) => {
     setBauTickets([...bauTickets, bauTicket]);
     setNewBauTicket('');
   };
@@ -48,8 +41,6 @@ function App() {
     <>
       <div>
         <h1>Summary Email Creator</h1>
-
-        {JSON.stringify(tickets, null, 2)}
 
         <TicketInput addTicket={addTicket} />
         <TicketInput addTicket={addBauTicket} />

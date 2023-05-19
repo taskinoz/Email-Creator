@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { statusOptions } from './Status';
 import TicketInput from './Ticket';
+import Ticket from './Ticket';
 
 const SummaryEmail = ({
     tickets,
@@ -13,19 +14,11 @@ const SummaryEmail = ({
             <ul>
                 <li>EPIC - Business As Usual</li>
                 <ul>
-                    {tickets.map((ticket) => (
-                        <li key={ticket.id}>
-                            {ticket.description}
-                        </li>
-                    ))}
+                    {tickets.map((ticket) => <Ticket ticket={ticket} />)}
                 </ul>
                 <li>High Priority Items</li>
                 <ul>
-                    {bauTickets.map((ticket) => (
-                        <li key={ticket.id}>
-                            {ticket.description}
-                        </li>
-                    ))}
+                    {bauTickets.map((ticket) => <Ticket ticket={ticket} />)}
                 </ul>
             </ul>
             <h2>Email Preview</h2>
