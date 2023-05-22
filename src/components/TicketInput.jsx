@@ -7,6 +7,15 @@ const TicketInput = ({
     const [ticket, setTicket] = useState({});
     return (
         <div>
+            <select value={ticket?.type??""} onChange={(e) => {
+                let t = { ...ticket };
+                t.type = e.target.value;
+                setTicket(t)
+            }}>
+                <option>Select Type</option>
+                <option value="mustHave">Must Have</option>
+                <option value="niceToHave">Nice to Have</option>
+            </select>
             <input
                 type="text"
                 placeholder="[SP-123] Fix some stuff"
@@ -17,7 +26,6 @@ const TicketInput = ({
                     setTicket(t)
                 }}
             />
-            {console.log(ticket)}
             <select value={ticket?.status??""} onChange={(e) => {
                 let t = { ...ticket };
                 t.status = e.target.value;
