@@ -2,31 +2,31 @@ export const statusOptions = [
     {
         name: 'Complete',
         emojii: '✅',
-        color: 'green',
+        color: '#93c47d',
         value: 'success',
     },
     {
         name: 'QA Ready',
         emojii: '📋',
-        color: 'yellow',
+        color: '#f1c232',
         value: 'qaready',
     },
     {
         name: 'QA Approved',
         emojii: '✅',
-        color: 'green',
+        color: '#f1c232',
         value: 'qaapproved',
     },
     {
         name: 'Miss',
         emojii: '❌',
-        color: 'red',
+        color: '#f00',
         value: 'miss',
     },
     {
         name: 'Moved to Backlog',
         emojii: '🔙',
-        color: 'blue',
+        color: '#f00',
         value: 'backlog',
     },
 ];
