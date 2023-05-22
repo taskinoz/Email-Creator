@@ -27,7 +27,7 @@ const SummaryEmail = ({
             <p>This is a wrap of Sprint {sprint} for our Code Runners.</p>
             <p style={{textDecoration:"underline"}}>How we did:</p>
             {goals.map((goal, index) => ( 
-                <Goals key={goal.goal+index} goal={goal.goal} reason={goal.reason} />
+                <Goals key={goal.goal+index} goal={goal.goal} reason={goal.reason} status={goal.status} />
             ))}
 
             <ul>
