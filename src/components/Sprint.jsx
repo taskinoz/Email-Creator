@@ -1,6 +1,6 @@
 const Sprint = ({
+    setSprintNumber,
     sprint,
-    setSprint,
 }) => {
     return (
         <div>
@@ -8,7 +8,7 @@ const Sprint = ({
                 type="number"
                 placeholder="Sprint Number"
                 value={sprint}
-                onChange={(e) => setSprint(e.target.value)}
+                onChange={(e) => setSprintNumber(e.target.value)}
             />
         </div>
     )
